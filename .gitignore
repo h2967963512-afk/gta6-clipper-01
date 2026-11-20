@@ -1,5 +1,7 @@
 out/
 source/
 *.mp4
+*.log
+frames/
 transcripts.tar.gz
 node_modules/
