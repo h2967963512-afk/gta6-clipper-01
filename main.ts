@@ -28,6 +28,16 @@ if (typeof url !== 'string' || !/^https:\/\/(www\.)?youtube\.com\/shorts\/[^/]+$
   process.exit(1);
 }
 
+// Round-2 clip: a 4-star police shootout and escape from Rockstar's
+// "Grand Theft Auto VI: An Extended Look" (video oXEDj65xDYA), taken from
+// 14:03-14:51 - the convenience-store robbery into the driving getaway -
+// and cut down to a 44-second vertical Short.
+const videoId = url.split('/shorts/')[1];
+if (!videoId || /[?#]/.test(videoId)) {
+  console.error('VIDEO.json URL must be a bare Shorts link with no query string or fragment.');
+  process.exit(1);
+}
+
 mkdirSync(OUTPUT_DIR, { recursive: true });
 try {
   copyFileSync(src, join(OUTPUT_DIR, 'VIDEO.json'));
