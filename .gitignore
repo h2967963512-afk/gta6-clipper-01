@@ -1,0 +1,5 @@
+out/
+source/
+*.mp4
+transcripts.tar.gz
+node_modules/
